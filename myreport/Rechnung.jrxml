@@ -28,7 +28,7 @@
 		<band height="200" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<rectangle>
-				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="200" forecolor="rgba(32, 113, 227, 0.5686275)" backcolor="#1664D9" uuid="1f5084ba-b6f8-4664-b941-a8df70e22a7e">
+				<reportElement mode="Opaque" x="-20" y="-20" width="596" height="200" forecolor="#1664D9" backcolor="#1664D9" uuid="1f5084ba-b6f8-4664-b941-a8df70e22a7e">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -137,39 +137,50 @@ www.firmenname.de]]></text>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="70" splitType="Stretch">
+		<band height="80" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<rectangle>
+				<reportElement x="40" y="43" width="519" height="30" forecolor="#1664D9" backcolor="#1664D9" uuid="5bbd3bf1-31f3-456b-b328-50af4d46f207"/>
+			</rectangle>
 			<staticText>
-				<reportElement mode="Opaque" x="11" y="45" width="69" height="25" backcolor="#1664D9" uuid="f06481bc-7d16-48ba-9614-c7b22df50a13">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="16a7ae76-56d1-416d-abae-bf5f221a54b0"/>
-				</reportElement>
-				<textElement textAlignment="Center">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[ ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="80" y="45" width="281" height="25" forecolor="#FFFFFF" backcolor="#1664D9" uuid="c16434d2-fbfc-4587-bce0-b26f0bdbab0f">
+				<reportElement mode="Transparent" x="77" y="45" width="280" height="25" forecolor="#FFFFFF" backcolor="#000000" uuid="c16434d2-fbfc-4587-bce0-b26f0bdbab0f">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18d8e2d3-714b-4808-99fc-350b8af1f383"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Beschreibnung]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="361" y="45" width="79" height="25" forecolor="#FFFFFF" backcolor="#1664D9" uuid="2c8a17ad-d7ab-4ea8-ada1-f83e2a96a8d7">
+				<reportElement mode="Transparent" x="357" y="45" width="80" height="25" forecolor="#FFFFFF" backcolor="#000000" uuid="2c8a17ad-d7ab-4ea8-ada1-f83e2a96a8d7">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d2fb63ec-c387-4802-b8e4-f4468214da79"/>
 				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Gewicht:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="440" y="45" width="110" height="25" forecolor="#FFFFFF" backcolor="#1664D9" uuid="ee72df72-9941-476c-ac7d-b1b40bacdeac">
+				<reportElement mode="Transparent" x="437" y="45" width="110" height="25" forecolor="#FFFFFF" backcolor="#000000" uuid="ee72df72-9941-476c-ac7d-b1b40bacdeac">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a416e5e7-fa03-450a-bfd2-21b1fb30fb0f"/>
 				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
@@ -207,7 +218,7 @@ www.firmenname.de]]></text>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
+			<textField isBlankWhenNull="false">
 				<reportElement x="0" y="18" width="100" height="15" uuid="79beff8e-f413-44bf-9579-768873b5e453">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -216,7 +227,7 @@ www.firmenname.de]]></text>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get("rechnungsnr")]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
+			<textField isBlankWhenNull="false">
 				<reportElement x="100" y="18" width="100" height="15" uuid="5cbebbc8-9d8a-41ce-8ea4-19fbabb43009">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -225,15 +236,6 @@ www.firmenname.de]]></text>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get("kundennr")]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement mode="Opaque" x="550" y="45" width="20" height="25" backcolor="#1664D9" uuid="ede9d7ba-1f0a-4ce2-987e-7c7106aad5c6">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="16a7ae76-56d1-416d-abae-bf5f221a54b0"/>
-				</reportElement>
-				<textElement textAlignment="Center">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[ ]]></text>
-			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
@@ -311,7 +313,7 @@ www.firmenname.de]]></text>
 		<band height="80" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<rectangle>
-				<reportElement mode="Opaque" x="-20" y="0" width="595" height="80" forecolor="rgba(32, 113, 227, 0.5686275)" backcolor="#1664D9" uuid="be250d5d-4143-482d-a80b-002462bc21f5">
+				<reportElement mode="Opaque" x="-20" y="0" width="595" height="80" forecolor="#1664D9" backcolor="#1664D9" uuid="be250d5d-4143-482d-a80b-002462bc21f5">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
