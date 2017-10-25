@@ -5,6 +5,7 @@
  */
 package eu.papenhagen.myreport;
 
+import eu.papenhagen.mydata.ArtikelDataSample;
 import eu.papenhagen.mydata.PersonDataSample;
 import java.awt.BorderLayout;
 import java.util.HashMap;
@@ -41,13 +42,14 @@ public class Reporter {
         
         
           
-        JRDataSource datasource = new JRBeanCollectionDataSource(PersonDataSample.get());
+        JRDataSource datasource = new JRBeanCollectionDataSource(ArtikelDataSample.get());
         return JasperFillManager.fillReport(compileReport, data, datasource);
         
         
     }
     
     public static void main(String[] args) throws JRException {
+        
         JFrame f = new JFrame("Viewer");
         f.getContentPane().setLayout(new BorderLayout());
         f.getContentPane().add(new JRViewer( writeReport() ));
