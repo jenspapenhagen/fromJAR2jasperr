@@ -35,8 +35,9 @@ public class Reporter {
         Objects.requireNonNull(location);
 
         JasperReport compileReport = JasperCompileManager.compileReport(location);
-        Map<String, Object> data = new HashMap<>();
+        JRDataSource datasource = new JRBeanCollectionDataSource(ArtikelDataSample.get());
         
+        Map<String, Object> data = new HashMap<>();
         //person
         data.put("anrede", "Herr");
         data.put("vorname", PersonDataSample.get().get(0).getFirstName());
@@ -45,17 +46,16 @@ public class Reporter {
         data.put("hausnummer", PersonDataSample.get().get(0).getHousenumber());
         data.put("plz", PersonDataSample.get().get(0).getZip());
         data.put("stadt", PersonDataSample.get().get(0).getCity());
-        
+
         //rechnungs "api"
         data.put("rechnungsnr", 155);
         data.put("kundennr", 16351315);
         
         
         
+        JasperPrint output = JasperFillManager.fillReport(compileReport, data, datasource);
 
-        JRDataSource datasource = new JRBeanCollectionDataSource(ArtikelDataSample.get());
-        return JasperFillManager.fillReport(compileReport, data, datasource);
-
+        return output;
     }
 
     public static void main(String[] args) throws JRException {
@@ -67,7 +67,7 @@ public class Reporter {
             try {
                 f.getContentPane().add(new JRViewer(writeReport()));
             } catch (JRException ex) {
-                
+
             }
             f.pack();
             f.setVisible(true);
