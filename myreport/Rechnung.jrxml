@@ -41,9 +41,9 @@
 		<band height="80" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement x="10" y="10" width="100" height="30" forecolor="#FFFFFF" uuid="d5d39370-a7d0-4b82-b320-d44fca433c93"/>
+				<reportElement x="10" y="10" width="210" height="49" forecolor="#FFFFFF" uuid="d5d39370-a7d0-4b82-b320-d44fca433c93"/>
 				<textElement>
-					<font size="19"/>
+					<font size="26" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Rechnung:]]></text>
 			</staticText>
