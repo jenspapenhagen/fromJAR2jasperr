@@ -29,12 +29,17 @@ public class Reporter {
     public static JasperPrint writeReport() throws JRException{
         //yes hardcoded path
         //TODO better path 
-        String location = "C:\\Users\\jens.papenhagen\\JaspersoftWorkspace\\MyReports\\Blank_A4.jrxml";
+        String location = "Blank_A4.jrxml";
         Objects.requireNonNull(location);
         
         JasperReport compileReport = JasperCompileManager.compileReport(location);
         Map<String, Object> data = new HashMap<>();
-        data.put("test", "Hallo Jasper");
+        data.put("anrede", "Herr");
+        data.put("vorname", PersonDataSample.get().get(0).getFirstName() );
+        data.put("nachname", PersonDataSample.get().get(0).getLastName() );
+        
+        
+        
           
         JRDataSource datasource = new JRBeanCollectionDataSource(PersonDataSample.get());
         return JasperFillManager.fillReport(compileReport, data, datasource);
