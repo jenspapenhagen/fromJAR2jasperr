@@ -31,8 +31,6 @@ import net.sf.jasperreports.swing.JRViewer;
 public class Reporter {
 
     public static JasperPrint writeReport() throws JRException {
-        //yes hardcoded path
-        //TODO better path 
         String location = "Rechnung.jrxml";
         Objects.requireNonNull(location);
 
