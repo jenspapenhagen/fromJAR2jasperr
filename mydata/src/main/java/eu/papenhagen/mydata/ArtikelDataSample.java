@@ -16,9 +16,9 @@ public class ArtikelDataSample {
     
     public static  List<Artikel> get(){
         List<Artikel> list = new ArrayList<>();
-        Artikel a = new Artikel(1, "Computer Maus", 100, 15.80);
-        Artikel a1 = new Artikel(3, "Computer Tastatur", 450, 75.99);
-        Artikel a2 = new Artikel(2, "Mauspad", 50, 2.50);
+        Artikel a = new Artikel(11385, "Computer Maus", 100, 15.80);
+        Artikel a1 = new Artikel(12588, "Computer Tastatur", 450, 75.99);
+        Artikel a2 = new Artikel(22864, "Mauspad", 50, 2.50);
         
         
         

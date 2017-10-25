@@ -20,9 +20,9 @@ public class PersonDataSample {
     
    public static List<Person> get(){
        List<Person> list = new ArrayList<>();
-       Person p1 = new Person("Jens", "Papenhagen", 34);
-       Person p2 = new Person("Hans", "Meier", 60);
-       Person p3 = new Person("Peter", "Lustig", 54);
+       Person p1 = new Person("Jens", "Papenhagen", 34, "Postallee", 23, 22337, "Hamburg");
+       Person p2 = new Person("Hans", "Meier", 60, "Waldweg", 42, 25582, "München");
+       Person p3 = new Person("Peter", "Lustig", 54, "Marktstrasse", 2, 45852, "Dortmund");
        list.add(p1);
        list.add(p2);
        list.add(p3);
