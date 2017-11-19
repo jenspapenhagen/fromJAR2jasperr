@@ -261,8 +261,8 @@ www.firmenname.de]]></text>
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d2fb63ec-c387-4802-b8e4-f4468214da79"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[$F{wiegth} + " g"]]></textFieldExpression>
+				<textElement textAlignment="Right" markup="styled"/>
+				<textFieldExpression><![CDATA[($F{wiegth} >= 3000) ? "<style forecolor='red'>"+$F{wiegth} + " g</style>" : $F{wiegth} + " g"]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00 ¤;#,##0.00 - ¤">
 				<reportElement x="440" y="2" width="100" height="15" uuid="ffc4a620-68b1-40c8-8726-5af86da9c937">
@@ -281,13 +281,14 @@ www.firmenname.de]]></text>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="63">
+		<band height="42">
 			<staticText>
-				<reportElement x="400" y="0" width="79" height="15" uuid="e330e8b3-ebaf-4531-9fd5-360db4ff0d51"/>
+				<reportElement x="400" y="2" width="79" height="15" uuid="e330e8b3-ebaf-4531-9fd5-360db4ff0d51"/>
+				<textElement textAlignment="Right"/>
 				<text><![CDATA[Gesammt Preis:]]></text>
 			</staticText>
 			<textField pattern="#,##0.00 ¤;#,##0.00 - ¤">
-				<reportElement x="479" y="0" width="61" height="15" uuid="4fe78eb1-2154-499e-90f9-b27f30ee66e2">
+				<reportElement x="479" y="2" width="61" height="15" uuid="4fe78eb1-2154-499e-90f9-b27f30ee66e2">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
@@ -296,56 +297,71 @@ www.firmenname.de]]></text>
 				<textFieldExpression><![CDATA[$V{price1}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="250" y="0" width="90" height="15" uuid="9116a06b-9d39-4a5f-bb5b-bed16a1946e6">
+				<reportElement x="180" y="10" width="90" height="15" uuid="9116a06b-9d39-4a5f-bb5b-bed16a1946e6">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
+				<textElement textAlignment="Right"/>
 				<text><![CDATA[Gesammt Gewicht:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="340" y="0" width="51" height="15" uuid="691ec7e3-b87d-4767-86e0-9e74514f909e">
+				<reportElement x="270" y="10" width="40" height="15" uuid="691ec7e3-b87d-4767-86e0-9e74514f909e">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
+				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[($V{wiegth1}) / 1000 + " kg"]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="361" y="15" width="118" height="15" uuid="6d30497f-c7df-4fde-923f-a81e7edc3383"/>
+				<reportElement x="340" y="17" width="139" height="15" uuid="6d30497f-c7df-4fde-923f-a81e7edc3383"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[Gesammt Preis mit MwSt:]]></text>
 			</staticText>
 			<textField pattern="#,##0.00 ¤;#,##0.00 - ¤">
-				<reportElement x="479" y="15" width="61" height="15" uuid="2492ee50-932e-4ad3-8981-2362455d3cd7">
+				<reportElement x="479" y="17" width="61" height="15" uuid="2492ee50-932e-4ad3-8981-2362455d3cd7">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
+					<font isBold="true"/>
 					<paragraph lineSpacing="AtLeast"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{price1}*1.19]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="474" y="31" width="75" height="1" uuid="103125ef-b1f1-4d62-930e-5c5ede787ccd">
+				<reportElement x="474" y="33" width="75" height="1" uuid="103125ef-b1f1-4d62-930e-5c5ede787ccd">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 			</line>
 			<line>
-				<reportElement x="474" y="33" width="75" height="1" uuid="edc5844c-c92c-4468-8484-07f24e743e24">
+				<reportElement x="474" y="35" width="75" height="1" uuid="edc5844c-c92c-4468-8484-07f24e743e24">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 			</line>
+			<staticText>
+				<reportElement x="179" y="0" width="211" height="10" forecolor="#FF0400" uuid="f1207581-d4ce-458f-8b3c-67f95c1780bd">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[* rotes Markierte Gegestände werden gesondert verschickt]]></text>
+			</staticText>
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="80" splitType="Stretch">
+		<band height="200" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<rectangle>
-				<reportElement mode="Opaque" x="-22" y="0" width="600" height="80" forecolor="#1664D9" backcolor="#1664D9" uuid="be250d5d-4143-482d-a80b-002462bc21f5">
+				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="-22" y="119" width="600" height="80" forecolor="#1664D9" backcolor="#1664D9" uuid="be250d5d-4143-482d-a80b-002462bc21f5">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 			</rectangle>
 			<staticText>
-				<reportElement x="10" y="4" width="100" height="73" forecolor="#FFFFFF" uuid="972670f0-1172-4af9-bf48-c1bc92a5b70b"/>
+				<reportElement positionType="FixRelativeToBottom" x="10" y="123" width="100" height="73" forecolor="#FFFFFF" uuid="972670f0-1172-4af9-bf48-c1bc92a5b70b"/>
 				<textElement verticalAlignment="Middle" markup="none">
 					<font size="8"/>
 					<paragraph lineSpacing="Single"/>
@@ -355,7 +371,7 @@ Marktstrasse 3
 20568 Hamburg]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="140" y="4" width="70" height="73" forecolor="#FFFFFF" uuid="b1eb6a29-7fdf-41f8-85a8-00a7e55a5e8f"/>
+				<reportElement positionType="FixRelativeToBottom" x="140" y="123" width="70" height="73" forecolor="#FFFFFF" uuid="b1eb6a29-7fdf-41f8-85a8-00a7e55a5e8f"/>
 				<textElement verticalAlignment="Middle" markup="none">
 					<font size="8"/>
 					<paragraph lineSpacing="Single"/>
@@ -365,7 +381,7 @@ Max Mustermann
 Tel: 040/123 45 67]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="270" y="4" width="120" height="73" forecolor="#FFFFFF" uuid="1c1f5fdd-255f-4ee3-b6c2-1f4b07ae6926"/>
+				<reportElement positionType="FixRelativeToBottom" x="270" y="123" width="120" height="73" forecolor="#FFFFFF" uuid="1c1f5fdd-255f-4ee3-b6c2-1f4b07ae6926"/>
 				<textElement verticalAlignment="Middle" markup="none">
 					<font size="8"/>
 					<paragraph lineSpacing="Single"/>
@@ -375,7 +391,7 @@ HRB 123456
 Ust.IdNr.: DE 123456789]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="410" y="4" width="130" height="73" forecolor="#FFFFFF" uuid="4e781fb7-5c80-4c03-95fc-6c115020fd3d"/>
+				<reportElement positionType="FixRelativeToBottom" x="410" y="123" width="130" height="73" forecolor="#FFFFFF" uuid="4e781fb7-5c80-4c03-95fc-6c115020fd3d"/>
 				<textElement verticalAlignment="Middle" markup="none">
 					<font size="8"/>
 					<paragraph lineSpacing="Single"/>
@@ -384,6 +400,13 @@ Ust.IdNr.: DE 123456789]]></text>
 IBAN: DE 12 3456 7890 1234 56
 BIC: HASBAXXXXXHH]]></text>
 			</staticText>
+			<textField pattern="M/d/yy">
+				<reportElement x="0" y="10" width="455" height="50" uuid="ae010c8e-5e78-4d39-8101-57f8a468ce8a">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["Bitte überweisen Sie den Gesamtbetrag bis zum<b> "+new SimpleDateFormat("dd.MM.yyyy").format(new Date().getTime() + 14* 86400000) +" </b> auf unser untenstehendesn Konto."+"<br> Bei Rückfragen stehen wir ihnen jederzeit gerne zu Verfügung."]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageFooter>
 </jasperReport>
